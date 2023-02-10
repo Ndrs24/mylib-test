@@ -25,15 +25,15 @@
  * -For both library and library class, you can use a comma
  *   to add multiple entries.
  */
-#define MODULE_NAME "TestXd"
-#define MODULE_VERSION "0.0.0"
+#define MODULE_NAME "CurlDiscord"
+#define MODULE_VERSION "1.455.5"
 #define MODULE_AUTHOR "AndresG"
 #define MODULE_URL "Nohay-"
 #define MODULE_LOGTAG "testxdlogtag"
 #define MODULE_LIBRARY "testxd"
 #define MODULE_LIBCLASS ""
 // If you want the module not to be reloaded on mapchange, remove / comment out the next line
-#define MODULE_RELOAD_ON_MAPCHANGE
+//#define MODULE_RELOAD_ON_MAPCHANGE
 
 #ifdef __DATE__
 #define MODULE_DATE __DATE__
@@ -55,7 +55,7 @@
 // #define NO_ALLOC_OVERRIDES
 
 // Uncomment this if you are using MSVC8 or greater and want to fix some of the compatibility issues yourself 
-// #define NO_MSVC8_AUTO_COMPAT
+//#define NO_MSVC8_AUTO_COMPAT
 
 /** 
  * AMXX Init functions

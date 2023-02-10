@@ -73,8 +73,9 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <ExternalIncludePath>C:\msdk\amxmodx\public;C:\msdk\hlsdk\engine;C:\msdk\hlsdk\common;C:\msdk\hlsdk\dlls;C:\msdk\hlsdk\public;C:\msdk\metamod-hl1\metamod;$(ExternalIncludePath)</ExternalIncludePath>
+    <ExternalIncludePath>C:\msdk\amxmodx\public;C:\msdk\hlsdk\engine;C:\msdk\hlsdk\common;C:\msdk\hlsdk\dlls;C:\msdk\hlsdk\public;C:\msdk\metamod-hl1\metamod;C:\curl\builds\libcurl-vc-x86-release-static-ipv6-sspi-schannel\include;C:\json\include;$(ExternalIncludePath)</ExternalIncludePath>
     <TargetName>mylib_amxx</TargetName>
+    <LibraryPath>C:\curl\builds\libcurl-vc-x86-release-static-ipv6-sspi-schannel\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -89,12 +90,14 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;HAVE_STDINT_H;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;HAVE_STDINT_H;CURL_STATICLIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>libcurl_a.lib;Ws2_32.lib;Crypt32.lib;Wldap32.lib;Normaliz.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\curl\builds\libcurl-vc-x86-release-static-ipv6-sspi-schannel\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -142,10 +145,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CEmbed.cpp" />
     <ClCompile Include="MyBans\sdk\amxxmodule.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CEmbed.h" />
     <ClInclude Include="MyBans\sdk\amxxmodule.h" />
     <ClInclude Include="MyBans\sdk\moduleconfig.h" />
   </ItemGroup>

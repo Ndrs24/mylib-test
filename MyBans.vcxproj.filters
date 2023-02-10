@@ -24,6 +24,9 @@
     <ClCompile Include="MyBans\sdk\amxxmodule.cpp">
       <Filter>sdk</Filter>
     </ClCompile>
+    <ClCompile Include="CEmbed.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyBans\sdk\amxxmodule.h">
@@ -31,6 +34,9 @@
     </ClInclude>
     <ClInclude Include="MyBans\sdk\moduleconfig.h">
       <Filter>sdk</Filter>
+    </ClInclude>
+    <ClInclude Include="CEmbed.h">
+      <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
